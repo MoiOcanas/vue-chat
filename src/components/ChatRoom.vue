@@ -46,7 +46,10 @@
 </template>
 
 <script>
-
+import Vue from 'vue'
+import * as io from 'socket.io-client'
+import VueChatScroll from 'vue-chat-scroll'
+Vue.use(VueChatScroll)
 import axios from 'axios'
 
 export default {
@@ -56,7 +59,8 @@ export default {
       chats: [],
       errors: [],
       nickname: this.$route.params.nickname,
-      chat: {}
+      chat: {},
+      socket: io('http://localhost:4000')
     }
   },
   created () {
