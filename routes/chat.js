@@ -3,6 +3,10 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Chat = require('../models/Chat');
 
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
 //Get all rooms
 router.get('/', function (req, res, next) {
     Chat.find(function (err, products) {
