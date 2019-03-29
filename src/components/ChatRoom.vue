@@ -5,7 +5,7 @@
         Chat Room
       </h2>
       <b-list-group class="panel-body" v-chat-scroll>
-        <b-list-group-item v-for="(item, index) in chats" class="chat">
+        <b-list-group-item v-for="(item, index) in chats" :key="index" class="chat">
           <div class="left clearfix" v-if="item.nickname === nickname">
             <b-img left src="http://placehold.it/50/55C1E7/fff&text=ME" rounded="circle" width="75" height="75" alt="img" class="m-1" />
             <div class="chat-body clearfix">
